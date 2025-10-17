@@ -10,7 +10,7 @@ RUN ./gradlew clean build -x test
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
-COPY --from-build /app/build/libs/*.jar app.jar
+COPY --from=build /app/build/libs/*.jar app.jar
 
 EXPOSE 8000
 
